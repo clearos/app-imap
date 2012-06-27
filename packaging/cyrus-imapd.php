@@ -20,7 +20,7 @@ clearos_load_language('imap');
 $configlet = array(
 	'title' => lang('imap_app_name'),
 	'package' => 'cyrus-imapd',
-	'process_name' => 'cyrus-imapd',
+	'process_name' => 'cyrus-master',
 	'pid_file' => '/var/run/cyrus-master.pid',
 	'reloadable' => TRUE,
 	'url' => '/app/imap'

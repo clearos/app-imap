@@ -1,7 +1,7 @@
 <?php
 
 /**
- * IMAP controller.
+ * IMAP daemon controller.
  *
  * @category   Apps
  * @package    IMAP
@@ -30,11 +30,24 @@
 ///////////////////////////////////////////////////////////////////////////////
 
 ///////////////////////////////////////////////////////////////////////////////
+// B O O T S T R A P
+///////////////////////////////////////////////////////////////////////////////
+
+$bootstrap = getenv('CLEAROS_BOOTSTRAP') ? getenv('CLEAROS_BOOTSTRAP') : '/usr/clearos/framework/shared';
+require_once $bootstrap . '/bootstrap.php';
+
+///////////////////////////////////////////////////////////////////////////////
+// D E P E N D E N C I E S
+///////////////////////////////////////////////////////////////////////////////
+
+require clearos_app_base('base') . '/controllers/daemon.php';
+
+///////////////////////////////////////////////////////////////////////////////
 // C L A S S
 ///////////////////////////////////////////////////////////////////////////////
 
 /**
- * IMAP controller.
+ * IMAP daemon controller.
  *
  * @category   Apps
  * @package    IMAP
@@ -45,26 +58,10 @@
  * @link       http://www.clearfoundation.com/docs/developer/apps/imap/
  */
 
-class IMAP extends ClearOS_Controller
+class Server extends Daemon
 {
-    /**
-     * IMAP summary view.
-     *
-     * @return view
-     */
-
-    function index()
+    function __construct()
     {
-        // Load libraries
-        //---------------
-
-        $this->lang->load('imap');
-
-        // Load views
-        //-----------
-
-        $views = array('imap/server', 'imap/settings', 'imap/policy');
-
-        $this->page->view_forms($views, lang('imap_app_name'));
+        parent::__construct('cyrus-imapd', 'imap');
     }
 }

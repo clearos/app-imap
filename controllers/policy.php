@@ -1,13 +1,13 @@
 <?php
 
 /**
- * IMAP controller.
+ * IMAP policy controller.
  *
  * @category   Apps
  * @package    IMAP
  * @subpackage Controllers
  * @author     ClearFoundation <developer@clearfoundation.com>
- * @copyright  2012 ClearFoundation
+ * @copyright  2011 ClearFoundation
  * @license    http://www.gnu.org/copyleft/gpl.html GNU General Public License version 3 or later
  * @link       http://www.clearfoundation.com/docs/developer/apps/imap/
  */
@@ -30,41 +30,42 @@
 ///////////////////////////////////////////////////////////////////////////////
 
 ///////////////////////////////////////////////////////////////////////////////
+// B O O T S T R A P
+///////////////////////////////////////////////////////////////////////////////
+
+$bootstrap = getenv('CLEAROS_BOOTSTRAP') ? getenv('CLEAROS_BOOTSTRAP') : '/usr/clearos/framework/shared';
+require_once $bootstrap . '/bootstrap.php';
+
+///////////////////////////////////////////////////////////////////////////////
+// D E P E N D E N C I E S
+///////////////////////////////////////////////////////////////////////////////
+
+require clearos_app_base('groups') . '/controllers/groups.php';
+
+///////////////////////////////////////////////////////////////////////////////
 // C L A S S
 ///////////////////////////////////////////////////////////////////////////////
 
 /**
- * IMAP controller.
+ * IMAP policy controller.
  *
  * @category   Apps
  * @package    IMAP
  * @subpackage Controllers
  * @author     ClearFoundation <developer@clearfoundation.com>
- * @copyright  2012 ClearFoundation
+ * @copyright  2011 ClearFoundation
  * @license    http://www.gnu.org/copyleft/gpl.html GNU General Public License version 3 or later
  * @link       http://www.clearfoundation.com/docs/developer/apps/imap/
  */
 
-class IMAP extends ClearOS_Controller
+class Policy extends Groups
 {
     /**
-     * IMAP summary view.
-     *
-     * @return view
+     * PPTP Server policy constructor.
      */
 
-    function index()
+    function __construct()
     {
-        // Load libraries
-        //---------------
-
-        $this->lang->load('imap');
-
-        // Load views
-        //-----------
-
-        $views = array('imap/server', 'imap/settings', 'imap/policy');
-
-        $this->page->view_forms($views, lang('imap_app_name'));
+        parent::__construct('imap', array('imap_plugin'));
     }
 }

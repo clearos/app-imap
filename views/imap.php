@@ -37,34 +37,41 @@ $this->lang->load('base');
 $this->lang->load('imap');
 
 ///////////////////////////////////////////////////////////////////////////////
-// Form open
+// Form handler
+///////////////////////////////////////////////////////////////////////////////
+
+if ($form_type === 'edit') {
+    $read_only = FALSE;
+    $buttons = array(
+        form_submit_update('submit'),
+        anchor_cancel('/app/imap/settings'),
+    );
+} else {
+    $read_only = TRUE;
+    $buttons = array(
+        anchor_edit('/app/imap/settings/edit')
+    );
+}
+
+///////////////////////////////////////////////////////////////////////////////
+// Form
 ///////////////////////////////////////////////////////////////////////////////
 
 echo form_open('imap');
 echo form_header(lang('imap_imap_and_pop_server'));
 
-///////////////////////////////////////////////////////////////////////////////
-// Form Fields and Buttons
-///////////////////////////////////////////////////////////////////////////////
-
 echo fieldset_header(lang('base_settings'));
-echo field_toggle_enable_disable('imaps', $imaps, lang('imap_imaps'));
-echo field_toggle_enable_disable('pop3s', $pop3s, lang('imap_pop3s'));
-echo field_toggle_enable_disable('imap', $imap, lang('imap_imap'));
-echo field_toggle_enable_disable('pop3', $pop3, lang('imap_pop3'));
+echo field_toggle_enable_disable('imaps', $imaps, lang('imap_imaps'), $read_only);
+echo field_toggle_enable_disable('pop3s', $pop3s, lang('imap_pop3s'), $read_only);
+echo field_toggle_enable_disable('imap', $imap, lang('imap_imap'), $read_only);
+echo field_toggle_enable_disable('pop3', $pop3, lang('imap_pop3'), $read_only);
 echo fieldset_footer();
 
 echo fieldset_header(lang('imap_advanced_settings'));
-echo field_toggle_enable_disable('idled', $idled, lang('imap_push_email'));
+echo field_toggle_enable_disable('idled', $idled, lang('imap_push_email'), $read_only);
 echo fieldset_footer();
 
-echo field_button_set(array(
-    form_submit_update('submit', 'high')
-));
-
-///////////////////////////////////////////////////////////////////////////////
-// Form close
-///////////////////////////////////////////////////////////////////////////////
+echo field_button_set($buttons);
 
 echo form_footer();
 echo form_close();

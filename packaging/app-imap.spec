@@ -1,26 +1,26 @@
 
 Name: app-imap
-Group: ClearOS/Apps
-Version: 5.9.9.0
+Epoch: 1
+Version: 1.2.3
 Release: 1%{dist}
 Summary: IMAP and POP Server
 License: GPLv3
-Packager: ClearFoundation
-Vendor: ClearFoundation
+Group: ClearOS/Apps
 Source: %{name}-%{version}.tar.gz
 Buildarch: noarch
-Requires: %{name}-core = %{version}-%{release}
+Requires: %{name}-core = 1:%{version}-%{release}
 Requires: app-base
 
 %description
 IMAP and POP Server
 
 %package core
-Summary: IMAP and POP Server - APIs and install
-Group: ClearOS/Libraries
+Summary: IMAP and POP Server - Core
 License: LGPLv3
+Group: ClearOS/Libraries
 Requires: app-base-core
 Requires: cyrus-imapd >= 2.3.16
+Requires: app-imap-plugin-core
 
 %description core
 IMAP and POP Server

@@ -1,7 +1,7 @@
 
 Name: app-imap
 Epoch: 1
-Version: 1.2.3
+Version: 1.2.4
 Release: 1%{dist}
 Summary: IMAP and POP Server
 License: GPLv3
@@ -10,6 +10,7 @@ Source: %{name}-%{version}.tar.gz
 Buildarch: noarch
 Requires: %{name}-core = 1:%{version}-%{release}
 Requires: app-base
+Requires: app-smtp
 
 %description
 IMAP and POP Server
@@ -21,6 +22,10 @@ Group: ClearOS/Libraries
 Requires: app-base-core
 Requires: cyrus-imapd >= 2.3.16
 Requires: app-imap-plugin-core
+Requires: app-certificate-manager-core
+Requires: app-mail-routing-core
+Requires: app-smtp-core
+Requires: imapsync
 
 %description core
 IMAP and POP Server
@@ -35,6 +40,8 @@ This package provides the core API and libraries.
 mkdir -p -m 755 %{buildroot}/usr/clearos/apps/imap
 cp -r * %{buildroot}/usr/clearos/apps/imap/
 
+install -d -m 0755 %{buildroot}/var/clearos/imap
+install -d -m 0755 %{buildroot}/var/clearos/imap/backup
 install -D -m 0644 packaging/cyrus-imapd.php %{buildroot}/var/clearos/base/daemon/cyrus-imapd.php
 
 %post
@@ -75,6 +82,8 @@ exit 0
 %exclude /usr/clearos/apps/imap/packaging
 %exclude /usr/clearos/apps/imap/tests
 %dir /usr/clearos/apps/imap
+%dir /var/clearos/imap
+%dir /var/clearos/imap/backup
 /usr/clearos/apps/imap/deploy
 /usr/clearos/apps/imap/language
 /usr/clearos/apps/imap/libraries

@@ -5,7 +5,7 @@
 /////////////////////////////////////////////////////////////////////////////
 
 $app['basename'] = 'imap';
-$app['version'] = '1.2.0';
+$app['version'] = '1.2.4';
 $app['release'] = '1';
 $app['vendor'] = 'ClearFoundation';
 $app['packager'] = 'ClearFoundation';
@@ -33,9 +33,22 @@ $app['controllers']['policy']['title'] = lang('base_app_policy');
 // Packaging
 /////////////////////////////////////////////////////////////////////////////
 
+$app['requires'] = array(
+    'app-smtp',
+);
+
 $app['core_requires'] = array(
     'cyrus-imapd >= 2.3.16',
     'app-imap-plugin-core',
+    'app-certificate-manager-core',
+    'app-mail-routing-core',
+    'app-smtp-core',
+    'imapsync',
+);
+
+$app['core_directory_manifest'] = array(
+    '/var/clearos/imap' => array(),
+    '/var/clearos/imap/backup' => array(),
 );
 
 $app['core_file_manifest'] = array(

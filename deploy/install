@@ -1,0 +1,29 @@
+#!/bin/sh
+
+TIMESTAMP=`date "+%b-%d-%Y-%T"`
+
+# Set default configuration
+#--------------------------
+
+logger -p local6.notice -t installer "app-imap-core - setting default configuration"
+
+if [ -e /etc/cyrus.conf ]; then
+    cp /etc/cyrus.conf /var/clearos/imap/backup/cyrus.conf.$TIMESTAMP
+fi
+
+cp /usr/clearos/apps/imap/deploy/cyrus.conf /etc/cyrus.conf
+
+if [ -e /etc/imapd.conf ]; then
+    cp /etc/imapd.conf /var/clearos/imap/backup/imapd.conf.$TIMESTAMP
+fi
+
+cp /usr/clearos/apps/imap/deploy/imapd.conf /etc/imapd.conf
+
+# Set default start/boot
+#-----------------------
+
+logger -p local6.notice -t installer "app-imap-core - enabling IMAP and POP server"
+chkconfig cyrus-imapd on
+
+logger -p local6.notice -t installer "app-imap-core - starting IMAP and POP server"
+service cyrus-imapd start

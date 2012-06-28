@@ -19,6 +19,11 @@ fi
 
 cp /usr/clearos/apps/imap/deploy/imapd.conf /etc/imapd.conf
 
+# Postfix LDAP hooks - run template through the LDAP synchronize system
+#----------------------------------------------------------------------
+
+/usr/sbin/ldap-synchronize
+
 # Set default start/boot
 #-----------------------
 
@@ -27,3 +32,4 @@ chkconfig cyrus-imapd on
 
 logger -p local6.notice -t installer "app-imap-core - starting IMAP and POP server"
 service cyrus-imapd start
+

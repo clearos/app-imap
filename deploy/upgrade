@@ -1,0 +1,16 @@
+#!/bin/sh
+
+# Update alias maps
+#------------------
+
+CHECK=`/usr/sbin/postconf virtual_alias_maps 2>/dev/null | grep imap-aliases`
+if [ -z "$CHECK" ]; then
+    logger -p local6.notice -t installer "app-imap-core - updating alias maps"
+    /usr/sbin/postconf -e "virtual_alias_maps = \$alias_maps, \$virtual_maps, ldap:/etc/postfix/imap-aliases.cf, ldap:/etc/postfix/imap-groups.cf"
+fi
+
+# Restart postfix
+#----------------
+
+/sbin/service postfix condrestart
+

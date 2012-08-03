@@ -1,7 +1,7 @@
 
 Name: app-imap
 Epoch: 1
-Version: 1.2.5
+Version: 1.2.6
 Release: 1%{dist}
 Summary: IMAP and POP Server
 License: GPLv3
@@ -13,7 +13,7 @@ Requires: app-base
 Requires: app-smtp
 
 %description
-IMAP and POP Server
+The IMAP and POP server provides a standard set of services for mail clients (Thunderbird, Mail, Evolution, Outlook/Express etc.) to connect to the server and retrieve/display email.
 
 %package core
 Summary: IMAP and POP Server - Core
@@ -29,7 +29,7 @@ Requires: app-smtp-core
 Requires: imapsync
 
 %description core
-IMAP and POP Server
+The IMAP and POP server provides a standard set of services for mail clients (Thunderbird, Mail, Evolution, Outlook/Express etc.) to connect to the server and retrieve/display email.
 
 This package provides the core API and libraries.
 

@@ -44,6 +44,7 @@ $app['core_requires'] = array(
     'app-mail-extension-core >= 1:1.1.1',
     'app-mail-routing-core',
     'app-smtp-core',
+    'app-tasks-core',
     'imapsync',
 );
 
@@ -53,6 +54,7 @@ $app['core_directory_manifest'] = array(
 );
 
 $app['core_file_manifest'] = array(
+    'app-imap.cron' => array( 'target' => '/etc/cron.d/app-imap'),
     'cyrus-imapd.php'=> array('target' => '/var/clearos/base/daemon/cyrus-imapd.php'),
     'imap-ldap-aliases.cf'=> array('target' => '/var/clearos/ldap/synchronize/imap-ldap-aliases.cf'),
     'imap-ldap-groups.cf'=> array('target' => '/var/clearos/ldap/synchronize/imap-ldap-groups.cf'),

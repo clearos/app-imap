@@ -43,6 +43,7 @@ cp -r * %{buildroot}/usr/clearos/apps/imap/
 
 install -d -m 0755 %{buildroot}/var/clearos/imap
 install -d -m 0755 %{buildroot}/var/clearos/imap/backup
+install -D -m 0644 packaging/app-imap.cron %{buildroot}/etc/cron.d/app-imap
 install -D -m 0644 packaging/cyrus-imapd.php %{buildroot}/var/clearos/base/daemon/cyrus-imapd.php
 install -D -m 0644 packaging/imap-ldap-aliases.cf %{buildroot}/var/clearos/ldap/synchronize/imap-ldap-aliases.cf
 install -D -m 0644 packaging/imap-ldap-groups.cf %{buildroot}/var/clearos/ldap/synchronize/imap-ldap-groups.cf
@@ -90,6 +91,7 @@ exit 0
 /usr/clearos/apps/imap/deploy
 /usr/clearos/apps/imap/language
 /usr/clearos/apps/imap/libraries
+/etc/cron.d/app-imap
 /var/clearos/base/daemon/cyrus-imapd.php
 /var/clearos/ldap/synchronize/imap-ldap-aliases.cf
 /var/clearos/ldap/synchronize/imap-ldap-groups.cf

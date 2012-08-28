@@ -1,0 +1,2 @@
+30 5 * * *  cyrus /bin/nice -n 19 /usr/lib/cyrus-imapd/quota -f >/dev/null 2>&1
+45 5 * * *  cyrus /bin/nice -n 19 /usr/lib/cyrus-imapd/squatter -s -r -v user >/dev/null 2>&1

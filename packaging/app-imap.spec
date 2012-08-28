@@ -1,7 +1,7 @@
 
 Name: app-imap
 Epoch: 1
-Version: 1.2.6
+Version: 1.2.7
 Release: 1%{dist}
 Summary: IMAP and POP Server
 License: GPLv3
@@ -26,6 +26,7 @@ Requires: app-certificate-manager-core
 Requires: app-mail-extension-core >= 1:1.1.1
 Requires: app-mail-routing-core
 Requires: app-smtp-core
+Requires: app-tasks-core
 Requires: imapsync
 
 %description core

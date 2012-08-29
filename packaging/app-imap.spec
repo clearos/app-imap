@@ -10,7 +10,7 @@ Source: %{name}-%{version}.tar.gz
 Buildarch: noarch
 Requires: %{name}-core = 1:%{version}-%{release}
 Requires: app-base
-Requires: app-smtp
+Requires: app-smtp >= 1:1.2.4
 
 %description
 The IMAP and POP server provides a standard set of services for mail clients (Thunderbird, Mail, Evolution, Outlook/Express etc.) to connect to the server and retrieve/display email.

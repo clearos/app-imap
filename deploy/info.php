@@ -34,7 +34,7 @@ $app['controllers']['policy']['title'] = lang('base_app_policy');
 /////////////////////////////////////////////////////////////////////////////
 
 $app['requires'] = array(
-    'app-smtp',
+    'app-smtp >= 1:1.2.4',
 );
 
 $app['core_requires'] = array(

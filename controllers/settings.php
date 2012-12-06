@@ -113,7 +113,7 @@ class Settings extends ClearOS_Controller
                 $this->cyrus->set_service_state(Cyrus::SERVICE_IMAPS, $this->input->post('imaps'));
                 $this->cyrus->set_idled_state($this->input->post('idled'));
 
-                $this->cyrus->reset();
+                $this->cyrus->reset(TRUE);
 
                 $this->page->set_status_updated();
             } catch (Exception $e) {

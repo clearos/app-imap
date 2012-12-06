@@ -58,9 +58,9 @@ if ($form_type === 'edit') {
 ///////////////////////////////////////////////////////////////////////////////
 
 echo form_open('imap');
-echo form_header(lang('imap_imap_and_pop_server'));
+echo form_header(lang('base_settings'));
 
-echo fieldset_header(lang('base_settings'));
+echo fieldset_header(lang('base_service'));
 echo field_toggle_enable_disable('imaps', $imaps, lang('imap_imaps'), $read_only);
 echo field_toggle_enable_disable('pop3s', $pop3s, lang('imap_pop3s'), $read_only);
 echo field_toggle_enable_disable('imap', $imap, lang('imap_imap'), $read_only);

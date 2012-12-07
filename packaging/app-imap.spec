@@ -1,7 +1,7 @@
 
 Name: app-imap
 Epoch: 1
-Version: 1.4.7
+Version: 1.4.8
 Release: 1%{dist}
 Summary: IMAP and POP Server
 License: GPLv3
@@ -42,9 +42,11 @@ This package provides the core API and libraries.
 mkdir -p -m 755 %{buildroot}/usr/clearos/apps/imap
 cp -r * %{buildroot}/usr/clearos/apps/imap/
 
+install -d -m 0755 %{buildroot}/etc/clearos/imap.d
 install -d -m 0755 %{buildroot}/var/clearos/imap
 install -d -m 0755 %{buildroot}/var/clearos/imap/backup
 install -D -m 0644 packaging/app-imap.cron %{buildroot}/etc/cron.d/app-imap
+install -D -m 0644 packaging/authorize %{buildroot}/etc/clearos/imap.d/authorize
 install -D -m 0644 packaging/cyrus-imapd.php %{buildroot}/var/clearos/base/daemon/cyrus-imapd.php
 install -D -m 0644 packaging/imap-ldap-aliases.cf %{buildroot}/var/clearos/ldap/synchronize/imap-ldap-aliases.cf
 install -D -m 0644 packaging/imap-ldap-groups.cf %{buildroot}/var/clearos/ldap/synchronize/imap-ldap-groups.cf
@@ -87,12 +89,14 @@ exit 0
 %exclude /usr/clearos/apps/imap/packaging
 %exclude /usr/clearos/apps/imap/tests
 %dir /usr/clearos/apps/imap
+%dir /etc/clearos/imap.d
 %dir /var/clearos/imap
 %dir /var/clearos/imap/backup
 /usr/clearos/apps/imap/deploy
 /usr/clearos/apps/imap/language
 /usr/clearos/apps/imap/libraries
 /etc/cron.d/app-imap
+%config(noreplace) /etc/clearos/imap.d/authorize
 /var/clearos/base/daemon/cyrus-imapd.php
 /var/clearos/ldap/synchronize/imap-ldap-aliases.cf
 /var/clearos/ldap/synchronize/imap-ldap-groups.cf

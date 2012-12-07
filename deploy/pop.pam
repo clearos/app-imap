@@ -1,0 +1,6 @@
+#%PAM-1.0
+auth       required     pam_nologin.so
+auth       include      password-auth
+account    required     pam_listfile.so item=group sense=allow file=/etc/clearos/imap.d/authorize onerr=fail
+account    include      password-auth
+session    include      password-auth

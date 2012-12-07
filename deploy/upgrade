@@ -9,8 +9,25 @@ if [ -z "$CHECK" ]; then
     /usr/sbin/postconf -e "virtual_alias_maps = \$alias_maps, \$virtual_maps, ldap:/etc/postfix/imap-aliases.cf, ldap:/etc/postfix/imap-groups.cf"
 fi
 
+# PAM check
+#--------------------------------------------------------------------------
+
+CHECK=`grep clearos/imap.d /etc/pam.d/imap`
+if [ -z "$CHECK" ]; then
+    logger -p local6.notice -t installer "app-web-proxy-core - applying IMAP PAM configuration"
+    [ -e /etc/pam.d/imap ] && cp /etc/pam.d/imap /var/clearos/imap/backup/imap.pam.$TIMESTAMP
+    cp /usr/clearos/apps/imap/deploy/imap.pam /etc/pam.d/imap
+fi
+
+CHECK=`grep clearos/imap.d /etc/pam.d/pop`
+if [ -z "$CHECK" ]; then
+    logger -p local6.notice -t installer "app-web-proxy-core - applying POP PAM configuration"
+    [ -e /etc/pam.d/pop ] && cp /etc/pam.d/pop /var/clearos/imap/backup/pop.pam.$TIMESTAMP
+    cp /usr/clearos/apps/imap/deploy/pop.pam /etc/pam.d/pop
+fi
+
+
 # Restart postfix
 #----------------
 
-/sbin/service postfix condrestart
-
+/sbin/service postfix condrestart >/dev/null 2>&1

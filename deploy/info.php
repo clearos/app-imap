@@ -5,7 +5,7 @@
 /////////////////////////////////////////////////////////////////////////////
 
 $app['basename'] = 'imap';
-$app['version'] = '1.4.7';
+$app['version'] = '1.4.8';
 $app['release'] = '1';
 $app['vendor'] = 'ClearFoundation';
 $app['packager'] = 'ClearFoundation';
@@ -49,6 +49,7 @@ $app['core_requires'] = array(
 );
 
 $app['core_directory_manifest'] = array(
+    '/etc/clearos/imap.d' => array(),
     '/var/clearos/imap' => array(),
     '/var/clearos/imap/backup' => array(),
 );
@@ -58,4 +59,12 @@ $app['core_file_manifest'] = array(
     'cyrus-imapd.php'=> array('target' => '/var/clearos/base/daemon/cyrus-imapd.php'),
     'imap-ldap-aliases.cf'=> array('target' => '/var/clearos/ldap/synchronize/imap-ldap-aliases.cf'),
     'imap-ldap-groups.cf'=> array('target' => '/var/clearos/ldap/synchronize/imap-ldap-groups.cf'),
+    'authorize' => array(
+        'target' => '/etc/clearos/imap.d/authorize',
+        'mode' => '0644',
+        'owner' => 'root',
+        'group' => 'root',
+        'config' => TRUE,
+        'config_params' => 'noreplace',
+    ),
 );

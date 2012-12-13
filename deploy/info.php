@@ -68,3 +68,9 @@ $app['core_file_manifest'] = array(
         'config_params' => 'noreplace',
     ),
 );
+$app['delete_dependency'] = array(
+    'app-imap-core',
+    'app-imap-plugin-core',
+    'imapsync',
+    'cyrus-imapd'
+);

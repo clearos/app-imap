@@ -22,6 +22,6 @@ $configlet = array(
 	'package' => 'cyrus-imapd',
 	'process_name' => 'cyrus-master',
 	'pid_file' => '/var/run/cyrus-master.pid',
-	'reloadable' => TRUE,
+	'reloadable' => FALSE,
 	'url' => '/app/imap'
 );

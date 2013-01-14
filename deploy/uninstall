@@ -1,0 +1,16 @@
+#!/bin/sh
+
+# Remove Postfix LDAP configlets
+#-------------------------------
+
+[ -e /etc/postfix/imap-aliases.cf ] && rm -f /etc/postfix/imap-aliases.cf
+[ -e /etc/postfix/imap-groups.cf ] && rm -f /etc/postfix/imap-groups.cf
+
+# Clean up virtual_alias_maps
+#----------------------------
+
+CHECK=`/usr/sbin/postconf virtual_alias_maps 2>/dev/null | grep imap-aliases`
+if [ -n "$CHECK" ]; then
+    logger -p local6.notice -t installer "app-imap-core - cleaning alias maps"
+    /usr/sbin/postconf -e "virtual_alias_maps = \$alias_maps, \$virtual_maps"
+fi

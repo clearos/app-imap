@@ -7,7 +7,7 @@
  * @package    IMAP
  * @subpackage Libraries
  * @author     ClearFoundation <developer@clearfoundation.com>
- * @copyright  2006-2011 ClearFoundation
+ * @copyright  2006-2013 ClearFoundation
  * @license    http://www.gnu.org/copyleft/lgpl.html GNU Lesser General Public License version 3 or later
  * @link       http://www.clearfoundation.com/docs/developer/apps/imap/
  */
@@ -82,7 +82,7 @@ clearos_load_library('base/Validation_Exception');
  * @package    IMAP
  * @subpackage Libraries
  * @author     ClearFoundation <developer@clearfoundation.com>
- * @copyright  2006-2011 ClearFoundation
+ * @copyright  2006-2013 ClearFoundation
  * @license    http://www.gnu.org/copyleft/lgpl.html GNU Lesser General Public License version 3 or later
  * @link       http://www.clearfoundation.com/docs/developer/apps/imap/
  */
@@ -164,7 +164,7 @@ class Cyrus extends Daemon
      * Enables service.
      *
      * @param string  $service service name
-     * @param boolean $state service state
+     * @param boolean $state   service state
      *
      * @return void
      * @throws Engine_Exception, Validation_Exception
@@ -403,7 +403,7 @@ class Cyrus extends Daemon
         $section = '';
         $config = array();
         $matches = array();
-// FIXME: imap on 127.0.0.1 is not working
+        // FIXME: imap on 127.0.0.1 is not working
 
         foreach ($lines as $line) {
 

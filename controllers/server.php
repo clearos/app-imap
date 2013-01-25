@@ -60,6 +60,10 @@ require clearos_app_base('base') . '/controllers/daemon.php';
 
 class Server extends Daemon
 {
+    /**
+     * IMAP daemon constructor.
+     */
+
     function __construct()
     {
         parent::__construct('cyrus-imapd', 'imap');

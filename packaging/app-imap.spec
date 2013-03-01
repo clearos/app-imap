@@ -1,7 +1,7 @@
 
 Name: app-imap
 Epoch: 1
-Version: 1.4.15
+Version: 1.4.20
 Release: 1%{dist}
 Summary: IMAP and POP Server
 License: GPLv3

@@ -3,9 +3,9 @@
 /**
  * IMAP controller.
  *
- * @category   Apps
- * @package    IMAP
- * @subpackage Controllers
+ * @category   apps
+ * @package    imap
+ * @subpackage controllers
  * @author     ClearFoundation <developer@clearfoundation.com>
  * @copyright  2012 ClearFoundation
  * @license    http://www.gnu.org/copyleft/gpl.html GNU General Public License version 3 or later
@@ -36,9 +36,9 @@
 /**
  * IMAP controller.
  *
- * @category   Apps
- * @package    IMAP
- * @subpackage Controllers
+ * @category   apps
+ * @package    imap
+ * @subpackage controllers
  * @author     ClearFoundation <developer@clearfoundation.com>
  * @copyright  2012 ClearFoundation
  * @license    http://www.gnu.org/copyleft/gpl.html GNU General Public License version 3 or later

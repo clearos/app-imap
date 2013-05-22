@@ -3,9 +3,9 @@
 /**
  * Cyrus mail server class.
  *
- * @category   Apps
- * @package    IMAP
- * @subpackage Libraries
+ * @category   apps
+ * @package    imap
+ * @subpackage libraries
  * @author     ClearFoundation <developer@clearfoundation.com>
  * @copyright  2006-2013 ClearFoundation
  * @license    http://www.gnu.org/copyleft/lgpl.html GNU Lesser General Public License version 3 or later
@@ -78,9 +78,9 @@ clearos_load_library('base/Validation_Exception');
  * In order to handle the LDAP/Cyrus account synchronization, access to IMAP 
  * on 127.0.0.1 must be running at all times.
  *
- * @category   Apps
- * @package    IMAP
- * @subpackage Libraries
+ * @category   apps
+ * @package    imap
+ * @subpackage libraries
  * @author     ClearFoundation <developer@clearfoundation.com>
  * @copyright  2006-2013 ClearFoundation
  * @license    http://www.gnu.org/copyleft/lgpl.html GNU Lesser General Public License version 3 or later

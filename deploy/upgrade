@@ -26,6 +26,14 @@ if [ -z "$CHECK" ]; then
     cp /usr/clearos/apps/imap/deploy/pop.pam /etc/pam.d/pop
 fi
 
+# Add root to PAM authorize list
+#-------------------------------
+
+CHECK=`grep ^root /etc/clearos/imap.d/authorize`
+if [ -z "$CHECK" ]; then
+    logger -p local6.notice -t installer "app-imap-core - adding root to PAM authorize list"
+    echo "root" >> /etc/clearos/imap.d/authorize
+fi
 
 # Restart postfix
 #----------------

@@ -67,7 +67,7 @@ echo field_toggle_enable_disable('imap', $imap, lang('imap_imap'), $read_only);
 echo field_toggle_enable_disable('pop3', $pop3, lang('imap_pop3'), $read_only);
 echo fieldset_footer();
 
-echo fieldset_header(lang('imap_advanced_settings'));
+echo fieldset_header(lang('base_advanced_settings'));
 echo field_toggle_enable_disable('idled', $idled, lang('imap_push_email'), $read_only);
 echo fieldset_footer();
 

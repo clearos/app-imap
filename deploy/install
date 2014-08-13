@@ -28,8 +28,7 @@ cp /usr/clearos/apps/imap/deploy/imapd.conf /etc/imapd.conf
 #-----------------------
 
 logger -p local6.notice -t installer "app-imap-core - enabling IMAP and POP server"
-chkconfig cyrus-imapd on
+chkconfig cyrus-imapd on >/dev/null 2>&1
 
 logger -p local6.notice -t installer "app-imap-core - starting IMAP and POP server"
-service cyrus-imapd start
-
+service cyrus-imapd start >/dev/null 2>&1

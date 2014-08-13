@@ -1,5 +1,7 @@
 #!/bin/sh
 
+TIMESTAMP=`date "+%b-%d-%Y-%T"`
+
 # Update alias maps
 #------------------
 

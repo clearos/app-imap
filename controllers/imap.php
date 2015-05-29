@@ -55,6 +55,16 @@ class IMAP extends ClearOS_Controller
 
     function index()
     {
+        // Show account status widget if we're not in a happy state
+        //---------------------------------------------------------
+
+        $this->load->module('accounts/status');
+
+        if ($this->status->unhappy()) {
+            $this->status->infobox();
+            return;
+        }
+
         // Show Certificate Manager widget if it is not initialized
         //---------------------------------------------------------
 

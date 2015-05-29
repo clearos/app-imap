@@ -39,6 +39,7 @@ $app['requires'] = array(
 
 $app['core_requires'] = array(
     'cyrus-imapd >= 2.3.16',
+    'app-accounts >= 1:2.1.0',
     'app-imap-plugin-core',
     'app-certificate-manager-core',
     'app-mail-extension-core >= 1:1.1.1',

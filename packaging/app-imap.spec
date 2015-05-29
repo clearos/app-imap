@@ -21,6 +21,7 @@ License: LGPLv3
 Group: ClearOS/Libraries
 Requires: app-base-core
 Requires: cyrus-imapd >= 2.3.16
+Requires: app-accounts >= 1:2.1.0
 Requires: app-imap-plugin-core
 Requires: app-certificate-manager-core
 Requires: app-mail-extension-core >= 1:1.1.1

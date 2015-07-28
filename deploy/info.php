@@ -5,7 +5,7 @@
 /////////////////////////////////////////////////////////////////////////////
 
 $app['basename'] = 'imap';
-$app['version'] = '2.1.6';
+$app['version'] = '2.1.10';
 $app['release'] = '1';
 $app['vendor'] = 'ClearFoundation';
 $app['packager'] = 'ClearFoundation';
@@ -41,7 +41,7 @@ $app['core_requires'] = array(
     'cyrus-imapd >= 2.3.16',
     'app-accounts >= 1:2.1.0',
     'app-imap-plugin-core',
-    'app-certificate-manager-core',
+    'app-certificate-manager',
     'app-mail-extension-core >= 1:1.1.1',
     'app-mail-routing-core',
     'app-smtp-core',

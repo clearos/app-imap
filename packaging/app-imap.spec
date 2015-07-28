@@ -1,7 +1,7 @@
 
 Name: app-imap
 Epoch: 1
-Version: 2.1.6
+Version: 2.1.10
 Release: 1%{dist}
 Summary: IMAP and POP Server
 License: GPLv3
@@ -23,7 +23,7 @@ Requires: app-base-core
 Requires: cyrus-imapd >= 2.3.16
 Requires: app-accounts >= 1:2.1.0
 Requires: app-imap-plugin-core
-Requires: app-certificate-manager-core
+Requires: app-certificate-manager
 Requires: app-mail-extension-core >= 1:1.1.1
 Requires: app-mail-routing-core
 Requires: app-smtp-core

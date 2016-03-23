@@ -1,7 +1,7 @@
 
 Name: app-imap
 Epoch: 1
-Version: 2.1.10
+Version: 2.2.1
 Release: 1%{dist}
 Summary: IMAP and POP Server
 License: GPLv3
@@ -47,7 +47,9 @@ install -d -m 0755 %{buildroot}/etc/clearos/imap.d
 install -d -m 0755 %{buildroot}/var/clearos/imap
 install -d -m 0755 %{buildroot}/var/clearos/imap/backup
 install -D -m 0644 packaging/app-imap.cron %{buildroot}/etc/cron.d/app-imap
+install -D -m 0644 packaging/attack-detector-cyrus-imap.php %{buildroot}/var/clearos/attack_detector/filters/cyrus-imap.php
 install -D -m 0644 packaging/authorize %{buildroot}/etc/clearos/imap.d/authorize
+install -D -m 0644 packaging/clearos-cyrus-imap.conf %{buildroot}/etc/fail2ban/jail.d/clearos-cyrus-imap.conf
 install -D -m 0644 packaging/cyrus-imapd.php %{buildroot}/var/clearos/base/daemon/cyrus-imapd.php
 install -D -m 0644 packaging/imap-ldap-aliases.cf %{buildroot}/var/clearos/ldap/synchronize/imap-ldap-aliases.cf
 install -D -m 0644 packaging/imap-ldap-groups.cf %{buildroot}/var/clearos/ldap/synchronize/imap-ldap-groups.cf
@@ -96,7 +98,9 @@ exit 0
 /usr/clearos/apps/imap/language
 /usr/clearos/apps/imap/libraries
 /etc/cron.d/app-imap
+/var/clearos/attack_detector/filters/cyrus-imap.php
 %config(noreplace) /etc/clearos/imap.d/authorize
+%config(noreplace) /etc/fail2ban/jail.d/clearos-cyrus-imap.conf
 /var/clearos/base/daemon/cyrus-imapd.php
 /var/clearos/ldap/synchronize/imap-ldap-aliases.cf
 /var/clearos/ldap/synchronize/imap-ldap-groups.cf

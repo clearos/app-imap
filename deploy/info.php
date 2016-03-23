@@ -5,7 +5,7 @@
 /////////////////////////////////////////////////////////////////////////////
 
 $app['basename'] = 'imap';
-$app['version'] = '2.1.10';
+$app['version'] = '2.2.1';
 $app['release'] = '1';
 $app['vendor'] = 'ClearFoundation';
 $app['packager'] = 'ClearFoundation';
@@ -67,6 +67,12 @@ $app['core_file_manifest'] = array(
         'group' => 'root',
         'config' => TRUE,
         'config_params' => 'noreplace',
+    ),
+    'attack-detector-cyrus-imap.php' => array('target' => '/var/clearos/attack_detector/filters/cyrus-imap.php'),
+    'clearos-cyrus-imap.conf' => array(
+        'target' => '/etc/fail2ban/jail.d/clearos-cyrus-imap.conf',
+        'config' => TRUE,
+        'config_params' => 'noreplace'
     ),
 );
 $app['delete_dependency'] = array(

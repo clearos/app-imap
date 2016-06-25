@@ -403,7 +403,6 @@ class Cyrus extends Daemon
         $section = '';
         $config = array();
         $matches = array();
-        // FIXME: imap on 127.0.0.1 is not working
 
         foreach ($lines as $line) {
 
@@ -424,7 +423,6 @@ class Cyrus extends Daemon
             if (preg_match('/^\s*}/', $line) && $section) {
                 foreach ($this->config[$section] as $process => $details) {
                     if ($details['state'] === self::STATE_NEW) {
-
                         $new_lines = "  $process";
 
                         if (isset($details['cmd']))
@@ -457,10 +455,12 @@ class Cyrus extends Daemon
                 // STATE_NEW: rewrite line (not fully implemented)
 
                 if (isset($this->config[$section][$process]['state'])) {
-                    if ($this->config[$section][$process]['state'] === self::STATE_DISABLED)
+                    if ($this->config[$section][$process]['state'] === self::STATE_DISABLED) {
+                        if (!preg_match('/127.0.0.1/', $this->config[$section][$process]['listen']))
+                            continue;
+                    } else if ($this->config[$section][$process]['state'] === self::STATE_NEW) {
                         continue;
-                    else if ($this->config[$section][$process]['state'] === self::STATE_NEW)
-                        continue;
+                    }
                 }
             }
 

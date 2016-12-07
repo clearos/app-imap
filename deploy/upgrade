@@ -37,6 +37,11 @@ if [ -z "$CHECK" ]; then
     echo "root" >> /etc/clearos/imap.d/authorize
 fi
 
+# Postfix LDAP hooks - run template through the LDAP synchronize system
+#----------------------------------------------------------------------
+
+/usr/sbin/ldap-synchronize
+
 # Restart postfix
 #----------------
 

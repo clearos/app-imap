@@ -42,7 +42,7 @@ $app['core_requires'] = array(
     'app-accounts >= 1:2.1.0',
     'app-imap-plugin-core',
     'app-certificate-manager',
-    'app-mail-extension-core >= 1:1.1.1',
+    'app-mail-extension-core >= 1:2.3.0',
     'app-mail-routing-core',
     'app-smtp-core',
     'app-tasks-core',

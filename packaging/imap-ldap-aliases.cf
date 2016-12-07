@@ -7,8 +7,8 @@ server_host = ldap://127.0.0.1:389
 search_base = ou=Users,ou=Accounts,@@@base_dn@@@
 query_filter = (|(clearMailAliases=%u)(mail=%u@*))
 domain = hash:/etc/postfix/searchdomains
-result_attribute = mail
-result_format = %u
+result_attribute = mail, clearMailForwarders
+result_format = %s
 search_timeout = 15
 scope = sub
 bind = no

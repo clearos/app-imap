@@ -5,7 +5,7 @@
 /////////////////////////////////////////////////////////////////////////////
 
 $app['basename'] = 'imap';
-$app['version'] = '2.3.1';
+$app['version'] = '2.3.2';
 $app['release'] = '1';
 $app['vendor'] = 'ClearFoundation';
 $app['packager'] = 'ClearFoundation';
@@ -43,7 +43,7 @@ $app['core_requires'] = array(
     'app-imap-plugin-core',
     'app-certificate-manager',
     'app-mail-extension-core >= 1:2.3.0',
-    'app-mail-routing-core',
+    'app-mail-routing-core >= 1:2.3.0',
     'app-smtp-core',
     'app-tasks-core',
     'imapsync',

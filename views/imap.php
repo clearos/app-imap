@@ -69,6 +69,7 @@ echo fieldset_footer();
 
 echo fieldset_header(lang('base_advanced_settings'));
 echo field_toggle_enable_disable('idled', $idled, lang('imap_push_email'), $read_only);
+// echo field_dropdown('certificate', $certificate_options, $certificate, lang('certificate_manager_digital_certificate'), $read_only);
 echo fieldset_footer();
 
 echo field_button_set($buttons);

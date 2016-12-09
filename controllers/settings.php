@@ -112,6 +112,7 @@ class Settings extends ClearOS_Controller
                 $this->cyrus->set_service_state(Cyrus::SERVICE_IMAP, $this->input->post('imap'));
                 $this->cyrus->set_service_state(Cyrus::SERVICE_IMAPS, $this->input->post('imaps'));
                 $this->cyrus->set_idled_state($this->input->post('idled'));
+                // $this->cyrus->set_ssl_certificate($this->input->post('ssl_certificate'));
 
                 $this->cyrus->reset(TRUE);
 
@@ -132,6 +133,8 @@ class Settings extends ClearOS_Controller
             $data['imap'] = $this->cyrus->get_service_state(Cyrus::SERVICE_IMAP);
             $data['imaps'] = $this->cyrus->get_service_state(Cyrus::SERVICE_IMAPS);
             $data['idled'] = $this->cyrus->get_idled_state();
+            // $data['certificate'] = $this->cyrus->get_certificate();
+            // $data['certificate_options'] = $this->cyrus->get_certificate_options();
         } catch (Exception $e) {
             $this->page->view_exception($e);
             return;

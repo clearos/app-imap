@@ -57,9 +57,11 @@ clearos_load_language('imap');
 
 use \clearos\apps\base\Daemon as Daemon;
 use \clearos\apps\base\File as File;
+use \clearos\apps\certificate_manager\Certificate_Manager as Certificate_Manager;
 
 clearos_load_library('base/Daemon');
 clearos_load_library('base/File');
+clearos_load_library('certificate_manager/Certificate_Manager');
 
 // Exceptions
 //-----------
@@ -130,6 +132,33 @@ class Cyrus extends Daemon
                 self::SERVICE_POP3,
                 self::SERVICE_POP3S
         );
+    }
+
+    /**
+     * Returns the configured digital certificate.
+     *
+     * @return array
+     */
+
+    function get_certificate()
+    {
+        clearos_profile(__METHOD__, __LINE__);
+    }
+
+    /**
+     * Returns a list of valid digital certificates.
+     *
+     * @return array
+     */
+
+    function get_certificate_options()
+    {
+        clearos_profile(__METHOD__, __LINE__);
+
+        $certificate_manager = new Certificate_Manager();
+        $certs = $certificate_manager->get_list();
+
+        return $certs;
     }
 
     /**

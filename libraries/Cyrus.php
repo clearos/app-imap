@@ -133,6 +133,70 @@ class Cyrus extends Daemon
     }
 
     /**
+     * Returns the state of idled (push mail).
+     *
+     * @return boolean TRUE if service is enabled
+     * @throws Engine_Exception
+     */
+
+    public function get_idled_state()
+    {
+        clearos_profile(__METHOD__, __LINE__);
+
+        if (! $this->is_loaded)
+            $this->_load_config();
+
+        if (isset($this->config['start']['idled']['state']) 
+            && ($this->config['start']['idled']['state'] === self::STATE_ENABLED)
+        ) {
+            return TRUE;
+        } else {
+            return FALSE;
+        }
+    }
+
+    /**
+     * Returns list of available services
+     *
+     * @return array list of services
+     * @throws Engine_Exception, Validation_Exception
+     */
+
+    public function get_service_list()
+    {
+        clearos_profile(__METHOD__, __LINE__);
+
+        return $this->services;
+    }
+
+    /**
+     * Returns the state of the service.
+     *
+     * @param string $service service name
+     *
+     * @return boolean TRUE if service is enabled
+     * @throws Engine_Exception, Validation_Exception
+     */
+
+    public function get_service_state($service)
+    {
+        clearos_profile(__METHOD__, __LINE__);
+
+        Validation_Exception::is_valid($this->validate_service($service));
+
+        if (!$this->is_loaded)
+            $this->_load_config();
+
+        if (isset($this->config['services'][$service]['state']) 
+            && ($this->config['services'][$service]['state'] === self::STATE_ENABLED)
+        ) {
+            return TRUE;
+        } else {
+            return FALSE;
+        }
+    }
+
+    /**
      * Enables idled service.
      *
      * @param boolean $state service state
@@ -214,70 +278,6 @@ class Cyrus extends Daemon
         }
 
         $this->_save_config();
-    }
-
-    /**
-     * Returns the state of idled (push mail).
-     *
-     * @return boolean TRUE if service is enabled
-     * @throws Engine_Exception
-     */
-
-    public function get_idled_state()
-    {
-        clearos_profile(__METHOD__, __LINE__);
-
-        if (! $this->is_loaded)
-            $this->_load_config();
-
-        if (isset($this->config['start']['idled']['state']) 
-            && ($this->config['start']['idled']['state'] === self::STATE_ENABLED)
-        ) {
-            return TRUE;
-        } else {
-            return FALSE;
-        }
-    }
-
-    /**
-     * Returns list of available services
-     *
-     * @return array list of services
-     * @throws Engine_Exception, Validation_Exception
-     */
-
-    public function get_service_list()
-    {
-        clearos_profile(__METHOD__, __LINE__);
-
-        return $this->services;
-    }
-
-    /**
-     * Returns the state of the service.
-     *
-     * @param string $service service name
-     *
-     * @return boolean TRUE if service is enabled
-     * @throws Engine_Exception, Validation_Exception
-     */
-
-    public function get_service_state($service)
-    {
-        clearos_profile(__METHOD__, __LINE__);
-
-        Validation_Exception::is_valid($this->validate_service($service));
-
-        if (!$this->is_loaded)
-            $this->_load_config();
-
-        if (isset($this->config['services'][$service]['state']) 
-            && ($this->config['services'][$service]['state'] === self::STATE_ENABLED)
-        ) {
-            return TRUE;
-        } else {
-            return FALSE;
-        }
     }
 
     ///////////////////////////////////////////////////////////////////////////////

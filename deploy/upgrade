@@ -37,6 +37,9 @@ if [ -z "$CHECK" ]; then
     echo "root" >> /etc/clearos/imap.d/authorize
 fi
 
+# FIXME: a quick hack for handling SSL keys in Cyrus IMAP 3
+/var/clearos/events/certificate_manager/imap
+
 # Postfix LDAP hooks - run template through the LDAP synchronize system
 #----------------------------------------------------------------------
 

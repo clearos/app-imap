@@ -49,6 +49,7 @@ install -d -m 0755 %{buildroot}/var/clearos/imap/backup
 install -D -m 0644 packaging/app-imap.cron %{buildroot}/etc/cron.d/app-imap
 install -D -m 0644 packaging/attack-detector-cyrus-imap.php %{buildroot}/var/clearos/attack_detector/filters/cyrus-imap.php
 install -D -m 0644 packaging/authorize %{buildroot}/etc/clearos/imap.d/authorize
+install -D -m 0755 packaging/certificate-manager-event %{buildroot}/var/clearos/events/certificate_manager/imap
 install -D -m 0644 packaging/clearos-cyrus-imap.conf %{buildroot}/etc/fail2ban/jail.d/clearos-cyrus-imap.conf
 install -D -m 0644 packaging/cyrus-imapd.php %{buildroot}/var/clearos/base/daemon/cyrus-imapd.php
 install -D -m 0644 packaging/imap-ldap-aliases.cf %{buildroot}/var/clearos/ldap/synchronize/imap-ldap-aliases.cf
@@ -101,6 +102,7 @@ exit 0
 /etc/cron.d/app-imap
 /var/clearos/attack_detector/filters/cyrus-imap.php
 %config(noreplace) /etc/clearos/imap.d/authorize
+/var/clearos/events/certificate_manager/imap
 %config(noreplace) /etc/fail2ban/jail.d/clearos-cyrus-imap.conf
 /var/clearos/base/daemon/cyrus-imapd.php
 /var/clearos/ldap/synchronize/imap-ldap-aliases.cf

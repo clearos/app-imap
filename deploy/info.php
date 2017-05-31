@@ -74,6 +74,10 @@ $app['core_file_manifest'] = array(
         'config' => TRUE,
         'config_params' => 'noreplace'
     ),
+    'certificate-manager-event'=> array(
+        'target' => '/var/clearos/events/certificate_manager/imap',
+        'mode' => '0755'
+    ),
 );
 $app['delete_dependency'] = array(
     'app-imap-core',

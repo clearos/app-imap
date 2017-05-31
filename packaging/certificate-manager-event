@@ -1,0 +1,8 @@
+#!/bin/sh
+
+if [ -e /etc/pki/CA/private/sys-0-key.pem ]; then
+    cp /etc/pki/CA/private/sys-0-key.pem /etc/pki/cyrus-imapd/
+    chown cyrus.root /etc/pki/cyrus-imapd/sys-0-key.pem
+
+    service cyrus-imapd restart >/dev/null 2>&1
+fi

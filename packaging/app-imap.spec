@@ -1,7 +1,7 @@
 
 Name: app-imap
 Epoch: 1
-Version: 2.3.2
+Version: 2.3.90
 Release: 1%{dist}
 Summary: IMAP and POP Server
 License: GPLv3
@@ -20,10 +20,10 @@ Summary: IMAP and POP Server - Core
 License: LGPLv3
 Group: ClearOS/Libraries
 Requires: app-base-core
-Requires: cyrus-imapd >= 2.3.16
+Requires: cyrus-imapd >= 3.0.1
 Requires: app-accounts >= 1:2.1.0
 Requires: app-imap-plugin-core
-Requires: app-certificate-manager
+Requires: app-certificate-manager >= 1:2.3.2
 Requires: app-mail-extension-core >= 1:2.3.0
 Requires: app-mail-routing-core >= 1:2.3.0
 Requires: app-smtp-core
@@ -90,6 +90,7 @@ exit 0
 %files core
 %defattr(-,root,root)
 %exclude /usr/clearos/apps/imap/packaging
+%exclude /usr/clearos/apps/imap/unify.json
 %dir /usr/clearos/apps/imap
 %dir /etc/clearos/imap.d
 %dir /var/clearos/imap

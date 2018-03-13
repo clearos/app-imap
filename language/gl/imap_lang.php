@@ -1,11 +1,11 @@
 <?php
 
-$lang['imap_app_description'] = 'O servidor IMAP e POP ofrece un conxunto estándar de servizos para clientes de correo (Thunderbird, Mail, Evolution, Outlook / Expreso etc.) para conectarse ao servidor e recuperar correo electrónico / display.';
-$lang['imap_app_name'] = 'IMAP e POP Servidor';
-$lang['imap_failed_logins'] = 'IMAP correo Erro logins';
+$lang['imap_app_description'] = 'O servidor IMAP e POP proporciona un conxunto estándar de servizos para os clientes de correo (Thunderbird, Mail, Evolution, Outlook / Express, etc.) para conectarse ao servidor e recuperar / visualizar o correo electrónico.';
+$lang['imap_app_name'] = 'Servidor IMAP e POP';
+$lang['imap_failed_logins'] = 'Erro ao iniciar sesión con erros de correo IMAP';
 $lang['imap_imap'] = 'IMAP';
-$lang['imap_imaps'] = 'seguro IMAP';
-$lang['imap_mail_service_invalid'] = 'servizo de correo electrónico non é válido.';
+$lang['imap_imaps'] = 'IMAP seguro';
+$lang['imap_mail_service_invalid'] = 'O servizo de correo non é válido.';
 $lang['imap_pop3'] = 'POP';
-$lang['imap_pop3s'] = 'seguro POP';
-$lang['imap_push_email'] = 'Push email';
+$lang['imap_pop3s'] = 'POP seguro';
+$lang['imap_push_email'] = 'Empurrar o correo electrónico';

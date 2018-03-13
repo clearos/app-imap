@@ -1,11 +1,11 @@
 <?php
 
-$lang['imap_app_description'] = 'IMAP dan POP server menyediakan satu set standar pelayanan untuk klien mail (Thunderbird, Mail, Evolution, Outlook / ekspres dll) untuk menghubungkan ke server dan mengambil / display email.';
+$lang['imap_app_description'] = 'Server IMAP dan POP menyediakan seperangkat layanan standar untuk klien email (Thunderbird, Mail, Evolution, Outlook / Express dll.) Untuk terhubung ke server dan mengambil / menampilkan email.';
 $lang['imap_app_name'] = 'IMAP dan POP Server';
-$lang['imap_failed_logins'] = 'IMAP Mail Gagal Login';
+$lang['imap_failed_logins'] = 'Login Gagal Email IMAP';
 $lang['imap_imap'] = 'IMAP';
-$lang['imap_imaps'] = 'IMAP aman';
-$lang['imap_mail_service_invalid'] = 'mail tidak valid.';
+$lang['imap_imaps'] = 'Amankan IMAP';
+$lang['imap_mail_service_invalid'] = 'Layanan surat tidak valid';
 $lang['imap_pop3'] = 'POP';
-$lang['imap_pop3s'] = 'POP aman';
-$lang['imap_push_email'] = 'Push E-mail';
+$lang['imap_pop3s'] = 'Amankan POP';
+$lang['imap_push_email'] = 'Dorong E-mail';

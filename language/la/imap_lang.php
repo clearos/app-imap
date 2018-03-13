@@ -1,11 +1,11 @@
 <?php
 
-$lang['imap_app_description'] = 'POP signum praebet et in IMAP ex meritis pro mail clients (Thunderbird, Mail, Evolution, Outlook / etc Express), ad coniungere ut retrieve et Server / display email.';
+$lang['imap_app_description'] = 'Et in IMAP servo POP-mail clients praebet vexillum paro of muneris in (Thunderbird, Mail, evolutionis, Outlook / Express etc.) ad coniungere in servitore et nomine recuperare / display quis.';
 $lang['imap_app_name'] = 'Et IMAP POP';
-$lang['imap_failed_logins'] = 'Mail IMAP robur Logins';
+$lang['imap_failed_logins'] = 'Deficio IMAP Mail Logins';
 $lang['imap_imap'] = 'IMAP';
-$lang['imap_imaps'] = 'Secure IMAP';
-$lang['imap_mail_service_invalid'] = 'Mail Service est invalidum.';
+$lang['imap_imaps'] = 'IMAP secure';
+$lang['imap_mail_service_invalid'] = 'Mail servitio invalidum est.';
 $lang['imap_pop3'] = 'POP';
-$lang['imap_pop3s'] = 'Secure POP';
-$lang['imap_push_email'] = 'E-mail ventilabis';
+$lang['imap_pop3s'] = 'POP secure';
+$lang['imap_push_email'] = 'E-mail dis';

@@ -1,11 +1,11 @@
 <?php
 
-$lang['imap_app_description'] = 'IMAP eta POP zerbitzaria eta posta-bezero (Thunderbird, Mail, Evolution, Outlook / Express abar) zerbitzu multzo estandar bat zerbitzarira konektatu eta mezu / display email eskaintzen.';
+$lang['imap_app_description'] = 'IMAP eta POP zerbitzariak zerbitzu-multzo estandarrak eskaintzen ditu posta bezeroentzat (Thunderbird, Mail, Evolution, Outlook / Express eta abar) zerbitzariarekin konektatzeko eta posta elektronikoa berreskuratu edo bistaratzeko.';
 $lang['imap_app_name'] = 'IMAP eta POP zerbitzaria';
-$lang['imap_failed_logins'] = 'IMAP Mail huts egindako sarrerak';
+$lang['imap_failed_logins'] = 'IMAP posta huts egin du saioa hasteko';
 $lang['imap_imap'] = 'IMAP';
 $lang['imap_imaps'] = 'IMAP segurua';
-$lang['imap_mail_service_invalid'] = 'Posta zerbitzua baliogabea da.';
+$lang['imap_mail_service_invalid'] = 'Posta zerbitzua ez da baliozkoa.';
 $lang['imap_pop3'] = 'POP';
-$lang['imap_pop3s'] = 'POP Secure';
-$lang['imap_push_email'] = 'Push E-mail';
+$lang['imap_pop3s'] = 'POP segurua';
+$lang['imap_push_email'] = 'Push e-mail';

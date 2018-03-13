@@ -1,11 +1,11 @@
 <?php
 
-$lang['imap_app_description'] = 'серверот IMAP и POP обезбедува стандарден сет на услуги за е-mail клиенти (Thunderbird, пошта, Еволушн, Outlook / Express итн) за да се поврзете на серверот и да ги превземете / прикажување е-мејл.';
-$lang['imap_app_name'] = 'IMAP и POP-серверот';
-$lang['imap_failed_logins'] = 'IMAP-пошта неуспешни обиди за најава';
+$lang['imap_app_description'] = 'IMAP и POP серверот обезбедува стандарден сет на услуги за пошта клиенти (Thunderbird, Mail, Evolution, Outlook / Express итн.) За да се поврзете на серверот и да добиете / прикажете е-пошта.';
+$lang['imap_app_name'] = 'IMAP и POP сервер';
+$lang['imap_failed_logins'] = 'IMAP пошта не успеа';
 $lang['imap_imap'] = 'IMAP';
-$lang['imap_imaps'] = 'безбедна IMAP';
-$lang['imap_mail_service_invalid'] = 'Mail сервисот не е валиден.';
+$lang['imap_imaps'] = 'Безбедна IMAP';
+$lang['imap_mail_service_invalid'] = 'Услугата за пошта е неважечка.';
 $lang['imap_pop3'] = 'ПОП';
-$lang['imap_pop3s'] = 'безбедна POP';
+$lang['imap_pop3s'] = 'Безбеден POP';
 $lang['imap_push_email'] = 'Притисни Е-пошта';

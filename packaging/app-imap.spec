@@ -12,7 +12,8 @@ Source: %{name}-%{version}.tar.gz
 Buildarch: noarch
 Requires: %{name}-core = 1:%{version}-%{release}
 Requires: app-base
-Requires: app-smtp >= 1:1.2.4
+Requires: app-accounts
+Requires: app-smtp
 Requires: app-certificate-manager
 
 %description
@@ -24,12 +25,12 @@ License: LGPLv3
 Group: Applications/API
 Requires: app-base-core
 Requires: cyrus-imapd >= 2.3.16
-Requires: app-accounts >= 1:2.1.0
+Requires: app-accounts-core >= 1:2.1.0
 Requires: app-imap-plugin-core
 Requires: app-certificate-manager-core >= 1:2.3.2
 Requires: app-mail-extension-core >= 1:2.3.0
 Requires: app-mail-routing-core >= 1:2.3.0
-Requires: app-smtp-core
+Requires: app-smtp-core >= 1:1.2.4
 Requires: app-tasks-core
 Requires: imapsync
 

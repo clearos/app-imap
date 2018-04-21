@@ -33,18 +33,19 @@ $app['controllers']['policy']['title'] = lang('base_app_policy');
 /////////////////////////////////////////////////////////////////////////////
 
 $app['requires'] = array(
-    'app-smtp >= 1:1.2.4',
+    'app-accounts',
+    'app-smtp',
     'app-certificate-manager'
 );
 
 $app['core_requires'] = array(
     'cyrus-imapd >= 2.3.16',
-    'app-accounts >= 1:2.1.0',
+    'app-accounts-core >= 1:2.1.0',
     'app-imap-plugin-core',
     'app-certificate-manager-core >= 1:2.3.2',
     'app-mail-extension-core >= 1:2.3.0',
     'app-mail-routing-core >= 1:2.3.0',
-    'app-smtp-core',
+    'app-smtp-core >= 1:1.2.4',
     'app-tasks-core',
     'imapsync',
 );

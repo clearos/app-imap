@@ -1,29 +1,32 @@
 
 Name: app-imap
 Epoch: 1
-Version: 2.3.2
+Version: 2.5.0
 Release: 1%{dist}
 Summary: IMAP and POP Server
 License: GPLv3
-Group: ClearOS/Apps
+Group: Applications/Apps
+Packager: ClearFoundation
+Vendor: ClearFoundation
 Source: %{name}-%{version}.tar.gz
 Buildarch: noarch
 Requires: %{name}-core = 1:%{version}-%{release}
 Requires: app-base
 Requires: app-smtp >= 1:1.2.4
+Requires: app-certificate-manager
 
 %description
 The IMAP and POP server provides a standard set of services for mail clients (Thunderbird, Mail, Evolution, Outlook/Express etc.) to connect to the server and retrieve/display email.
 
 %package core
-Summary: IMAP and POP Server - Core
+Summary: IMAP and POP Server - API
 License: LGPLv3
-Group: ClearOS/Libraries
+Group: Applications/API
 Requires: app-base-core
 Requires: cyrus-imapd >= 2.3.16
 Requires: app-accounts >= 1:2.1.0
 Requires: app-imap-plugin-core
-Requires: app-certificate-manager
+Requires: app-certificate-manager-core >= 1:2.3.2
 Requires: app-mail-extension-core >= 1:2.3.0
 Requires: app-mail-routing-core >= 1:2.3.0
 Requires: app-smtp-core
@@ -90,6 +93,7 @@ exit 0
 %files core
 %defattr(-,root,root)
 %exclude /usr/clearos/apps/imap/packaging
+%exclude /usr/clearos/apps/imap/unify.json
 %dir /usr/clearos/apps/imap
 %dir /etc/clearos/imap.d
 %dir /var/clearos/imap
